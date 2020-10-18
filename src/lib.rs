@@ -42,7 +42,6 @@ impl Asker {
                 write!(&mut self.xout, "{}", prompt)?;
                 self.xout.flush()?;
                 self.buf.clear();
-                self.xin.read_line(&mut self.buf)?;
             }
             self.xin.read_line(&mut self.buf)?;
             if !retry_empty_line || !self.buf.is_empty() {
